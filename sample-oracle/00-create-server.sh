@@ -11,7 +11,7 @@ gcloud compute instances create ${SERVER} \
   --project=${PROJECT} \
   --zone=${ZONE} \
   --machine-type=e2-highmem-2 \
-  --network-interface=network-tier=PREMIUM,subnet=${SUBNET_NAME} \
+  --network-interface=subnet=${SUBNET_NAME},no-address \
   --maintenance-policy=MIGRATE \
   --provisioning-model=STANDARD \
   --service-account=$(gcloud projects describe $PROJECT --format="value(projectNumber)")-compute@developer.gserviceaccount.com \
